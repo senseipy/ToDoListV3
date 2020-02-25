@@ -1,8 +1,8 @@
-package jl.elitek.todolistplus2.network
+package jl.elitek.todolistpluv3.network
 
 import android.util.Log
-import jl.elitek.todolistplus2.Params
-import jl.elitek.todolistplus2.models.Persona
+import jl.elitek.todolistv3.models.Persona
+import jl.elitek.todolistv3.Params
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,7 +23,7 @@ interface LoginAPI {
     ): Call<Persona>
 
     companion object {
-        val BASE_URL = Params.BASE_URL//"https://534d3695.ngrok.io/tdlpp_rest/api/"
+        val BASE_URL = Params.BASE_URL
 
 
         fun create(): LoginAPI {
