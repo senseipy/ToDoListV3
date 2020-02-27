@@ -2,7 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/ver_proyectos_menu_item"
-            android:title="@string/ver_proyectos_menu_item" />
+            android:id="@+id/nuevo_proyecto_menu_item"
+            android:title="@string/nuevo_proyecto"
+            android:icon="@android:drawable/btn_plus"/>
+        <item
+            android:id="@+id/nuevo_usuario_menu_item"
+            android:title="@string/nuevo_usuario" />
+        <item
+            android:id="@+id/ver_tareas_menu_item"
+            android:title="@string/ver_tareas" />
+        <item
+            android:id="@+id/nueva_tarea_menu_item"
+            android:title="@string/nueva_tarea" />
     </group>
 </menu>

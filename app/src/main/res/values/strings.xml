@@ -7,4 +7,8 @@
     <string name="login_titulo">Ingreso</string>
     <string name="ver_proyectos_menu_item">Ver Proyectos</string>
     <string name="lista_proyectos_fragment">Proyectos</string>
+    <string name="nuevo_proyecto">Nuevo Proyecto</string>
+    <string name="nuevo_usuario">Crear usuario</string>
+    <string name="ver_tareas">Ver Tareas</string>
+    <string name="nueva_tarea">Nueva Tarea</string>
 </resources>
