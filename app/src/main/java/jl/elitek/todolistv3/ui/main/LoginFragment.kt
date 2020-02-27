@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import jl.elitek.todolistv3.DataProvider
 import jl.elitek.todolistv3.R
 import jl.elitek.todolistv3.sharedViewModels.SharedViewModel
 
@@ -61,13 +60,12 @@ class LoginFragment : Fragment() {
             Observer { persona->
                 when (persona.rol){
                     "A" -> {
-                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToListaProyectosFragment())
-                       // DataProvider.admin = persona
                         sharedViewModel.persona.value = persona
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToListaProyectosFragment())
                         }
                     "U" -> {
                         findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToListaTareasFragment())
-                      //  DataProvider.admin = null
+
                         }
                     else -> Toast.makeText(context, "No se reconoce",Toast.LENGTH_LONG).show()
                 }
@@ -83,7 +81,7 @@ class LoginFragment : Fragment() {
 
     fun ingresarSistema(){
         val usr = login_fg_usuario.text.toString()
-        val pass = login_fg_TIET_password.text.toString()
+        val pass = form_persona_email.text.toString()
         viewModel.ingresar(usr, pass)
     }
     // TODO: Implement the ViewModel

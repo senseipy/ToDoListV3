@@ -17,6 +17,10 @@
             android:id="@+id/action_loginFragment_to_listaTareasFragment"
             app:destination="@id/listaTareasFragment"
             app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_loginFragment_to_formPersonasFragment"
+            app:destination="@id/formPersonasFragment"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/listaProyectosFragment"
@@ -46,4 +50,13 @@
         android:name="jl.elitek.todolistv3.ui.tareas.FormTareaFragment"
         android:label="form_tarea_fragment"
         tools:layout="@layout/form_tarea_fragment" />
+    <fragment
+        android:id="@+id/formPersonasFragment"
+        android:name="jl.elitek.todolistv3.ui.personas.FormPersonasFragment"
+        android:label="form_personas_fragment"
+        tools:layout="@layout/form_personas_fragment" >
+        <action
+            android:id="@+id/action_formPersonasFragment_to_formProyectoFragment"
+            app:destination="@id/formProyectoFragment" />
+    </fragment>
 </navigation>

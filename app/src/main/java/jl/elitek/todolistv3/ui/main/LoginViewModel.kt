@@ -33,7 +33,7 @@ class LoginViewModel() : ViewModel() {
     fun ingresar(usr: String, pass: String) {
         //  Log.d("REST","Hubo un error al obtener las personas")
 
-        val call = loginApi.postLogin(usr, pass)
+               val call = loginApi.postLogin(usr, pass)
 
         call.enqueue(object : Callback<Persona> {
             override fun onFailure(call: Call<Persona>, t: Throwable) {

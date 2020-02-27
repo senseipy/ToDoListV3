@@ -1,8 +1,9 @@
 package jl.elitek.todolistv3
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -10,6 +11,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
+import jl.elitek.todolistv3.ui.personas.FormPersonasFragment
+import jl.elitek.todolistv3.ui.proyectos.FormProyectoFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
@@ -21,11 +24,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(my_toolbar as Toolbar)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_hamburger_menu)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         navigationView.setNavigationItemSelectedListener(this)
-        //fin NUEVO
-     //   setSupportActionBar(toolbar) no funciona, ya existe una actionBar por omisión
-        setupNavigation()
     }
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(
@@ -59,19 +58,40 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         NavigationUI.setupWithNavController(navigationView, navController)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
+        }
+        return true
+    }
+
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         when(menu.itemId){
             R.id.nuevo_proyecto_menu_item -> {
+                Log.d("MSG","Nuevo proyecto!")
+                cambiarFragment(FormProyectoFragment.newInstance())
 //                cambiarFragment(Fragment1.newInstance())
             }
-            R.id.nueva_tarea_menu_item-> {
-  //              cambiarFragment(Fragment2.newInstance())
+            R.id.nuevo_usuario_menu_item-> {
+                Log.d("MSG","Nuevo usuario!")
+                cambiarFragment(FormPersonasFragment.newInstance())
+
             }
-            R.id.nuevo_usuario_menu_item -> {
+            R.id.nueva_tarea_menu_item -> {
 //                cambiarFragment(Fragment3.newInstance())
             }
         }
+
+        drawerLayout.closeDrawers()
         return true
+    }
+
+     public fun cambiarFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .addToBackStack(null)
+            .commit()
+        //Toast.makeText(this, "Click en $item", Toast.LENGTH_LONG).show()
     }
 
 }

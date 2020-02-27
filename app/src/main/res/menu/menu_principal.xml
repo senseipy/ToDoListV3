@@ -4,10 +4,11 @@
         <item
             android:id="@+id/nuevo_proyecto_menu_item"
             android:title="@string/nuevo_proyecto"
-            android:icon="@android:drawable/btn_plus"/>
+            android:icon="@drawable/ic_nuevo_proyecto"/>
         <item
             android:id="@+id/nuevo_usuario_menu_item"
-            android:title="@string/nuevo_usuario" />
+            android:title="@string/nuevo_usuario"
+            android:icon="@drawable/ic_nuevo_usuario"/>
         <item
             android:id="@+id/ver_tareas_menu_item"
             android:title="@string/ver_tareas" />

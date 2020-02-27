@@ -3,4 +3,5 @@
     <color name="colorPrimary">#B1A220</color>
     <color name="colorPrimaryDark">#827717</color>
     <color name="colorAccent">#938500</color>
+    <color name="fragment_default_backgrond">#FFFEF4</color>
 </resources>
