@@ -20,7 +20,6 @@ import jl.elitek.todolistv3.models.Persona
 import jl.elitek.todolistv3.models.Proyecto
 import jl.elitek.todolistv3.network.ProyectoAPI
 import jl.elitek.todolistv3.sharedViewModels.SharedViewModel
-import jl.elitek.todolistv3.ui.main.LoginViewModel
 import kotlinx.android.synthetic.main.lista_proyectos_fragment.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -50,7 +49,7 @@ class ListaProyectosFragment : Fragment() {
     }
 
     private lateinit var viewModel: ListaProyectosViewModel
-    private lateinit var sharedViewModel: LoginViewModel
+    private lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,30 +67,26 @@ class ListaProyectosFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        sharedViewModel = activity?.run {
+            ViewModelProvider(this).get(SharedViewModel::class.java)
+        }?:throw Exception("Invalid Activity")
+        // OBSERVER controla cuando se pasa el admin
+        sharedViewModel.persona.observe(viewLifecycleOwner, Observer {
+            Log.d("MSG","Llegó la persona ${it.toString()}")
+            obtenerProyectos(it.personaId)
+        })
+
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ListaProyectosViewModel::class.java)
-        sharedViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
-        //Log.d("MSG","Persona: $persona")
         lista_proyectos_fg_crearBtn.setOnClickListener {
             findNavController().navigate(ListaProyectosFragmentDirections.actionListaProyectosFragmentToFormProyectoFragment())
         }
-/*
-        sharedViewModel.observableUsuario.observe(
-            viewLifecycleOwner,
-            Observer { persona ->
-                admin = persona
-                Log.d("MSG", "Llegó la persona ${persona.nombre}")
 
-            }
-        )
-
-*/      admin = DataProvider.admin
-        if(admin != null){
-        Log.d("MSG","${admin.toString()}")
-        obtenerProyectos(admin!!.personaId)
-        }
     }
 
     fun obtenerProyectos(propietarioId: Int) {

@@ -1,13 +1,10 @@
-package jl.elitek.todolistplus2.models
+package jl.elitek.todolistv3.models
 
 data class Tarea (
-    var tarea_id: Int,
+    var actividadId: Actividad,
+    var estado: String,
     var nombre: String,
-    var fecha_programada: String,
-    var fecha_inicio: String,
-    var fecha_fin: String,
-    var fecha_limite: String,
-    var comentarios: String,
-    var estado: String
+    var responsableId:Persona,
+    var tareaId: Int
 // FALTA INDICAR EL RESPONSABLE
 )

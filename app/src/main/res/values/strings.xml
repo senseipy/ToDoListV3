@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ToDoListV3</string>
+    <string name="btn_Login">Ingresar</string>
+    <string name="form_proyecto_TIET_nombre_label">Nombre del Proyecto</string>
+    <string name="form_proyecto_comentarios">Breve Descripción</string>
+    <string name="btn_form_persona_guardar">Guardar</string>
+    <string name="login_titulo">Ingreso</string>
+    <string name="ver_proyectos_menu_item">Ver Proyectos</string>
+    <string name="lista_proyectos_fragment">Proyectos</string>
 </resources>

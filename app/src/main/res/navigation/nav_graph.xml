@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="jl.elitek.todolistv3.ui.main.LoginFragment"
+        android:label="@string/login_titulo"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_listaProyectosFragment"
+            app:destination="@id/listaProyectosFragment"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_listaTareasFragment"
+            app:destination="@id/listaTareasFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaProyectosFragment"
+        android:name="jl.elitek.todolistv3.ui.proyectos.ListaProyectosFragment"
+        android:label="@string/lista_proyectos_fragment"
+        tools:layout="@layout/lista_proyectos_fragment" >
+        <action
+            android:id="@+id/action_listaProyectosFragment_to_formProyectoFragment"
+            app:destination="@id/formProyectoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formProyectoFragment"
+        android:name="jl.elitek.todolistv3.ui.proyectos.FormProyectoFragment"
+        android:label="form_proyecto_fragment"
+        tools:layout="@layout/form_proyecto_fragment" />
+    <fragment
+        android:id="@+id/listaTareasFragment"
+        android:name="jl.elitek.todolistv3.ListaTareasFragment"
+        android:label="lista_tareas_fragment"
+        tools:layout="@layout/lista_tareas_fragment" >
+        <action
+            android:id="@+id/action_listaTareasFragment_to_formTareaFragment"
+            app:destination="@id/formTareaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formTareaFragment"
+        android:name="jl.elitek.todolistv3.ui.tareas.FormTareaFragment"
+        android:label="form_tarea_fragment"
+        tools:layout="@layout/form_tarea_fragment" />
+</navigation>

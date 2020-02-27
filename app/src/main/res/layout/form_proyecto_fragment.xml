@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.proyectos.FormProyectoFragment">
+<!-- Nombre -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/form_proyecto_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_proyecto_TIET_nombre_label"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            tools:layout_editor_absoluteX="6dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+<!--Comentario -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/form_proyecto_comentarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/form_proyecto_comentarios"
+
+            tools:layout_editor_absoluteX="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        <!-- fecha Inicio -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="178dp"
+
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/form_proyecto_fecha_inicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Inicio"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- fecha_limite-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="156dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/form_proyecto_fecha_limite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fin"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <!-- progreso -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/form_proyecto_progreso_TIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/form_proyecto_progreso_TIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Progreso del Proyecto: Int" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <!-- estado -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/form_proyecto_estado_TIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/form_proyecto_progreso_TIL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/form_proyecto_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Estado del Proyecto: A / P" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/form_proyecto_btn_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="174dp"
+        android:text="Guardar Proyecto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/form_proyecto_estado_TIL" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
