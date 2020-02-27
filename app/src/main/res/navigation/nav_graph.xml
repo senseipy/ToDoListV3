@@ -59,4 +59,9 @@
             android:id="@+id/action_formPersonasFragment_to_formProyectoFragment"
             app:destination="@id/formProyectoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/formActividadFragment"
+        android:name="jl.elitek.todolistv3.ui.actividades.FormActividadFragment"
+        android:label="form_actividad_fragment"
+        tools:layout="@layout/form_actividad_fragment" />
 </navigation>

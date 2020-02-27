@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nueva_tarea_menu_item -> {
-//                cambiarFragment(Fragment3.newInstance())
+                //cambiarFragment(AdminTareasFragment.newInstance())
             }
         }
 
