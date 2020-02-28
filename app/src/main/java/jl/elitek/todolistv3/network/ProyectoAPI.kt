@@ -17,6 +17,11 @@ interface ProyectoAPI {
 
     ): Call<ArrayList<Proyecto>>
 
+    @POST("proyecto")
+    fun nuevoProyecto(
+        @Body proyecto: Proyecto
+    ): Call<Proyecto>
+
     companion object {
         val BASE_URL = Params.BASE_URL
 

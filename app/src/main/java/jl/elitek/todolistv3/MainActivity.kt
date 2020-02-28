@@ -10,10 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.tabs.TabLayout
 import jl.elitek.todolistv3.ui.personas.FormPersonasFragment
 import jl.elitek.todolistv3.ui.proyectos.FormProyectoFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.admin_tareas_fragment.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
 
@@ -25,7 +28,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_hamburger_menu)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navigationView.setNavigationItemSelectedListener(this)
+        //tab support
+
+/*
+        val adminTabLayout: TabLayout = findViewById(R.id.adminTabs)
+        val viewPager: ViewPager = findViewById(R.id.adminFragmentPager)
+        val viewPagerAdapter = AdminTabFragmentPagerAdapter(supportFragmentManager)
+        // probablemente hay que añadir de a uno los fragmentos...
+//        viewPagerAdapter.appendFragment()
+        viewPager.adapter = viewPagerAdapter
+   //     adminTabLayout.setupWithViewPager(viewPager)
+
+ */
     }
+
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(
             Navigation.findNavController(this, R.id.nav_host_fragment),

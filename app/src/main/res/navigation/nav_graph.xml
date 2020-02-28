@@ -21,6 +21,9 @@
             android:id="@+id/action_loginFragment_to_formPersonasFragment"
             app:destination="@id/formPersonasFragment"
             app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminTareasFragment"
+            app:destination="@id/adminTareasFragment" />
     </fragment>
     <fragment
         android:id="@+id/listaProyectosFragment"
@@ -64,4 +67,9 @@
         android:name="jl.elitek.todolistv3.ui.actividades.FormActividadFragment"
         android:label="form_actividad_fragment"
         tools:layout="@layout/form_actividad_fragment" />
+    <fragment
+        android:id="@+id/adminTareasFragment"
+        android:name="jl.elitek.todolistv3.AdminTareasFragment"
+        android:label="admin_tareas_fragment"
+        tools:layout="@layout/admin_tareas_fragment" />
 </navigation>
